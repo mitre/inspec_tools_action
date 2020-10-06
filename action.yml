@@ -1,0 +1,17 @@
+name: 'Inspec Tools'
+author: The MITRE Corporation
+description: >
+  Check summary and threshold with inspec Tools
+branding:
+  icon: 'alert-triangle'
+  color: 'gray-dark'
+inputs:
+  thresholdfile:
+    description: 'Inspec Tools threshold file which sets the min/max results allowed in each category'
+    required: true
+  resultsfile:
+    description: 'Inspec results in JSON format'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
