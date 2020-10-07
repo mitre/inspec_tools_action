@@ -28,6 +28,47 @@ An example of the format of this file is found on the Inspec Tools [README](http
 
 This action will report a non-zero exit code if the command did not meet the thresholds set in `thresholdfile` input.
 
+## Example
+
+This action is useful for validating IT infrastructure as code or infrastructure hardening code fixes security controls/compliance findings or does not open any new security controls or compliance issues.
+
+Typical Steps:
+* Push new feature to infrastructure as code repository
+* Build new test infrastructure based off of previous step
+* Validate test infrastructure meets compliance requirements with Inspec
+* Use this action to define and enforce minimum thresholds for infrastructure compliance by requiring checks to pass in a pull request review
+
+```
+on: [pull-request]
+jobs:
+  inspec_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Inspec
+        run: inspec exec test.rb -t ssh://user@hostname --reporter=json:/inspec-output/inspec_results.json
+      - name: Upload Inspec Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: inspec_results
+          path: /inspec-output/inspec_results.json
+
+  inspec_tools_compliance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code for Threshold
+        uses: actions/checkout@v2
+      - name: Download Inspec Results
+        uses: actions/download-artifact@v2
+        with:
+          name: inspec_results
+      - name: Inspec Tools Check Compliance
+        uses: mitre/inspec_tools_action@main
+        with:
+          command: compliance
+          resultfile: inspec_results.json
+          thresholdfile: threshold.yaml
+```
+
 ## Contributing, Issues and Support
 
 ### Contributing
