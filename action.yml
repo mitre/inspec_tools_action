@@ -12,6 +12,9 @@ inputs:
   resultsfile:
     description: 'Inspec results in JSON format'
     required: true
+  command:
+    description: 'Inspec Tools command to run'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'

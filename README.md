@@ -1,5 +1,32 @@
 # inspec_tools_action
-GitHub Action for Inspec tools
+GitHub Action for [Inspec Tools](https://github.com/mitre/inspec_tools)
+
+## Input and Output Arguments
+### Input
+#### `command` (required)
+
+One of the available commands from Inspec Tools.
+
+**Note:** This action only supports the `compliance` and `summary` subcommands of Inspec Tools.
+
+* `summary`: Parses an Inspec results JSON and displays the summary information from all of the tests that were run.
+* `compliance`: Parses an Inspec results JSON to check if the compliance level meets a specified threshold. If the specified threshold is not met, an error code (1) is returned along with non-compliant elements.
+
+#### `resultsfile` (required)
+
+Filename of the file that contains the Inspec results JSON to examine.
+
+#### `thresholdfile` (required)
+
+Filename of the file that contains the Inspec Tools-format threshold file.
+
+An example of the format of this file is found on the Inspec Tools [README](https://github.com/mitre/inspec_tools#yaml-file-or-in-line-threshold-definition-styles)
+
+### Output
+
+#### Status Codes
+
+This action will report a non-zero exit code if the command did not meet the thresholds set in `thresholdfile` input.
 
 ## Contributing, Issues and Support
 
