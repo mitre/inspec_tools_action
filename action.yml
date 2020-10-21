@@ -1,4 +1,4 @@
-name: 'Inspec Tools'
+name: 'Inspec Tools Action'
 author: The MITRE Corporation
 description: >
   Check summary and threshold with inspec Tools
