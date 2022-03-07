@@ -9,15 +9,15 @@ inputs:
   thresholdfile:
     description: 'Inspec Tools threshold file which sets the min/max results allowed in each category'
     required: true
-    deprecationMessage: 'THIS ACTION IS DEPRECATED. Use mitre/saf_action to replace this action. Find it here: https://github.com/mitre/saf_action'
+    deprecationMessage: 'THIS ACTION IS DEPRECATED. Use mitre/saf_action to replace this action. Find it here: https://github.com/marketplace/actions/saf-cli-action'
   resultsfile:
     description: 'Inspec results in JSON format'
     required: true
-    deprecationMessage: 'THIS ACTION IS DEPRECATED. Use mitre/saf_action to replace this action. Find it here: https://github.com/mitre/saf_action'
+    deprecationMessage: 'THIS ACTION IS DEPRECATED. Use mitre/saf_action to replace this action. Find it here: https://github.com/marketplace/actions/saf-cli-action'
   command:
     description: 'Inspec Tools command to run'
     required: true
-    deprecationMessage: 'THIS ACTION IS DEPRECATED. Use mitre/saf_action to replace this action. Find it here: https://github.com/mitre/saf_action'
+    deprecationMessage: 'THIS ACTION IS DEPRECATED. Use mitre/saf_action to replace this action. Find it here: https://github.com/marketplace/actions/saf-cli-action'
 runs:
   using: 'docker'
   image: 'Dockerfile'
