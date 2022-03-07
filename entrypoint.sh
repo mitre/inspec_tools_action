@@ -2,6 +2,8 @@
 
 set -e
 
+sleep 10m
+
 if [ -n $INPUT_THRESHOLDFILE ] && [ -n $INPUT_COMMAND ] && [ -n $INPUT_RESULTFILE ]; then
   echo "Using $(inspec_tools version)"
   case "$INPUT_COMMAND" in
