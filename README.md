@@ -1,5 +1,4 @@
-# inspec_tools_action
-THIS ACTION IS DEPRECATED. Use the [SAF Action](https://github.com/marketplace/actions/saf-cli-action) instead.
+# Inspec Tools Action is DEPRECATED. Use the [SAF Action](https://github.com/marketplace/actions/saf-cli-action) instead.
 GitHub Action for [Inspec Tools](https://github.com/mitre/inspec_tools)
 
 ## Input and Output Arguments
